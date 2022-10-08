@@ -32,8 +32,8 @@ pipeline {
        agent{label 'awsDeploy'}
        steps{
        sh '''#!/bin/bash
-       git clone https://github.com/kura-labs-org/kuralabs_deployment_3.git
-       cd ./kuralabs_deployment_3
+       git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
+       cd ./kuralabs_deployment_2
        python3 -m venv test3
        source test3/bin/activate
        pip install -r requirements.txt
