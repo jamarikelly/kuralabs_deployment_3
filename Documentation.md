@@ -23,4 +23,4 @@ sudo apt install python3-pip
 sudo apt install python3.10-venv
 sudo apt install nginx
 ```
-## 4. The other step is to configure and connect a jenkins agent.
+ 4. The other step is to configure and connect a jenkins agent.
