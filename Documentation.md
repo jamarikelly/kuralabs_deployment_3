@@ -51,12 +51,14 @@ sudo apt install nginx
   ```
   
 ### 5.Create a Pipline Build in Jenkins.
-     * SSH into the app-server (EC2 in your VPC) and then run the command "nano /etc/nginx/sites-enabled/default"
-     * First change the port from 80 to 5000
-     * Scroll down, then replace "Location" with 
-     "location / { proxy_pass http://127.0.0.1:8000;
-                   proxy_set_header Host $host;
-                   proxy_set_header X- Forwarded-For $proxy_add_forwarded_for;
-                   }"
-  
+
+   * SSH into the app-server (EC2 in your VPC) and then run the command "nano /etc/nginx/sites-enabled/default"
+   * First change the port from 80 to 5000
+   * Scroll down, then replace "Location" with 
+   "location / { proxy_pass http://127.0.0.1:8000;
+                 proxy_set_header Host $host;
+                 proxy_set_header X- Forwarded-For $proxy_add_forwarded_for;
+                  }"
+                   
+###5b. Now edit jenkinsfile in repo to scrip shown below:
   
