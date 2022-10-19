@@ -15,7 +15,7 @@ sudo apt install jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 ```
-### 3. Create another ec2 instance and name it "app-server" in a newly created VPC and public subnet, with security groups 22 and 5000. Run the commands below in the app-server to install all the dependencies
+#### 3. Create another ec2 instance and name it "app-server" in a newly created VPC and public subnet, with security groups 22 and 5000. Run the commands below in the app-server to install all the dependencies
 ```
 sudo apt update && upgrade
 sudo apt install default-jre
