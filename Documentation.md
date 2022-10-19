@@ -41,7 +41,22 @@ sudo apt install nginx
   Host: "IP of your EC2"
   Host key verification strategy : non verifying verification strategy
   Availability: keep this agent online as much as possible 
+  Credential steps {
+                     * Select "Add" => "Jenkins" => Kind: "SSH username with private key"
+                     * Enter the ID, Description, username
+                     * To add the key, select "Enter Directly" => select "add" => paste the private key into the white box and save.
+                     }
+                     
+    To look at configurations click link 👉
   ```
   
+### 5.Create a Pipline Build in Jenkins.
+     * SSH into the app-server (EC2 in your VPC) and then run the command "nano /etc/nginx/sites-enabled/default"
+     * First change the port from 80 to 5000
+     * Scroll down, then replace "Location" with 
+     "location / { proxy_pass http://127.0.0.1:8000;
+                   proxy_set_header Host $host;
+                   proxy_set_header X- Forwarded-For $proxy_add_forwarded_for;
+                   }"
   
   
