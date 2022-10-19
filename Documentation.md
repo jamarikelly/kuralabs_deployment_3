@@ -26,3 +26,22 @@ sudo apt install python3.10-venv
 sudo apt install nginx
 ```
 ### 4. The other step is to configure and connect a jenkins agent.
+
+* Enter the jenkins server and select the Build Executor Status
+* Select the "+ New Node" to configure and add the agent. Enter the node name "awsDeploy" and select "Permanent Agent" and then create 
+* After that, you'll be prompted, the configurations should be similar as below:
+  ```
+  Name: awsDeploy
+  Description: Deployment server
+  Number of executors: 1
+  Remote root directory: /home/ubuntu/agent 
+  Labels: awsDeploy
+  Usage: only build jobs with label
+  Launch method: launch agent via ssh
+  Host: "IP of your EC2"
+  Host key verification strategy : non verifying verification strategy
+  Availability: keep this agent online as much as possible 
+  ```
+  
+  
+  
