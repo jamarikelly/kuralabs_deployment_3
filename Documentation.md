@@ -29,8 +29,8 @@ sudo apt install nginx
 
 * Enter the jenkins server and select the Build Executor Status
 * Select the "+ New Node" to configure and add the agent. Enter the node name "awsDeploy" and select "Permanent Agent" and then create 
-* After that, you'll be prompted, the configurations should be similar as below:
-  ```
+* After that, you'll be prompted, the configurations should be similar as below: 
+ ```
   Name: awsDeploy
   Description: Deployment server
   Number of executors: 1
