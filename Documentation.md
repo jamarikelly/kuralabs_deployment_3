@@ -60,7 +60,7 @@ sudo apt install nginx
                  proxy_set_header X- Forwarded-For $proxy_add_forwarded_for;
                   }"
                    
-    ![Alt text] (https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%203.26.02%20PM.png)
+ ![Alt text] (https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%203.26.02%20PM.png)
                    
 ### 5b. Now edit jenkinsfile in repo to scrip shown below:
   
