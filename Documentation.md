@@ -119,3 +119,25 @@ sudo apt install nginx
  }
  
  ```
+### 6. Now go back to your Jenkins and create a multibranch pipeline and connect it to your github account. Start your build. 
+
+```
+i.    Firstly go to github account and select developer settings, select personalize access tokens.
+ii.   Select generate new token, name your token then select "repo" and "admin:repo_hook" then generate token. Copy the key.
+iii.  Go back to jenkins, select "New Item" then select create "multibranch pipeline", also give your pipeline a name.
+iV.   Add a display name and a brief description.
+v.    Select source and select github.
+vi.   Select add and then select jenkins
+vii.  Under username, enter your github name and under password enter the copied token then select add.
+viii. Go back to the credentials dropdown menu and select the one just created. 
+iix.  Select the url for your repository and paste it, to validate it. if its confirmed, "apply" then "save" and watch the build process.
+```
+* If the credentials and configurations are correct, below is what you should see;
+👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.41.46%20PM.png
+
+* For my build #1 the test and deploy stages failed because dependencies were not installed on my Ec2, please remember to do that. 
+* For my build #2 the deploy stage failed because the agent was not set up properly and also again. Download all the dependencies listed at the begining   of the documentation.
+
+### 7. After configuring the issues listed above, the deployment was now successful and another testing stage was also added.
+  
+  ## 👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.46.34%20PM.png
