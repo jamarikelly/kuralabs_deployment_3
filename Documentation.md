@@ -47,7 +47,7 @@ sudo apt install nginx
                      * To add the key, select "Enter Directly" => select "add" => paste the private key into the white box and save.
                      }
                      
-    To look at configurations click link 👉
+    If the configurations are correct, click logs to see "Agent successfully connect and is online"click link to see  👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%203.26.02%20PM.png
   ```
   
 ### 5.Create a Pipline Build in Jenkins.
@@ -60,7 +60,7 @@ sudo apt install nginx
                  proxy_set_header X- Forwarded-For $proxy_add_forwarded_for;
                   }"
                    
- ![Alt text] (kuralabs_deployment_3/Images/Screen Shot 2022-10-26 at 3.26.02 PM.png)
-                   
+ look at the link to see the configurations mentioned above 👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-24%20at%203.03.51%20PM.png
+ 
 ### 5b. Now edit jenkinsfile in repo to scrip shown below:
   
