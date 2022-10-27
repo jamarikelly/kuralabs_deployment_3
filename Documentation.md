@@ -140,7 +140,7 @@ iix.  Select the url for your repository and paste it, to validate it. if its co
 
 ### 7. After configuring the issues listed above, the deployment was now successful and another testing stage "Test2" was also added.
   
-### 👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.46.34%20PM.png
+ *  👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.46.34%20PM.png
 
 
 ### 8. The stack used for this deployment was; linux, python, nginx, and gunicorn.
