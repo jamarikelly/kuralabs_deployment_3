@@ -133,11 +133,19 @@ viii. Go back to the credentials dropdown menu and select the one just created.
 iix.  Select the url for your repository and paste it, to validate it. if its confirmed, "apply" then "save" and watch the build process.
 ```
 * If the credentials and configurations are correct, below is what you should see;
-👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.41.46%20PM.png
+👇 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.41.46%20PM.png
 
 * For my build #1 the test and deploy stages failed because dependencies were not installed on my Ec2, please remember to do that. 
 * For my build #2 the deploy stage failed because the agent was not set up properly and also again. Download all the dependencies listed at the begining   of the documentation.
 
-### 7. After configuring the issues listed above, the deployment was now successful and another testing stage was also added.
+### 7. After configuring the issues listed above, the deployment was now successful and another testing stage "Test2" was also added.
   
-  ## 👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.46.34%20PM.png
+### 👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%202.46.34%20PM.png
+
+
+### 8. The stack used for this deployment was; linux, python, nginx, and gunicorn.
+
+### 9. The links shown below are for the images for the VPC and also an image for the pipeline used for the deployment.
+    
+  * for Pipeline 👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Untitled.jpg
+  * for the VPC  👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Untitled.drawio.png
