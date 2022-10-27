@@ -45,10 +45,10 @@ sudo apt install nginx
                      * Select "Add" => "Jenkins" => Kind: "SSH username with private key"
                      * Enter the ID, Description, username
                      * To add the key, select "Enter Directly" => select "add" => paste the private key into the white box and save.
-                     }
-                     
-    If the configurations are correct, click logs to see "Agent successfully connect and is online"click link to see  👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%203.26.02%20PM.png
-  ```
+                     }                   
+   ``` 
+    
+   If the configurations are correct, click logs to see "Agent successfully connect and is online"click link to see  👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-26%20at%203.26.02%20PM.png
   
 ### 5.Create a Pipline Build in Jenkins.
 
@@ -63,4 +63,59 @@ sudo apt install nginx
  look at the link to see the configurations mentioned above 👉 https://github.com/jamarikelly/kuralabs_deployment_3/blob/main/Images/Screen%20Shot%202022-10-24%20at%203.03.51%20PM.png
  
 ### 5b. Now edit jenkinsfile in repo to scrip shown below:
-  
+  ```
+  pipeline {
+  agent any
+   stages {
+    stage ('Build') {
+      steps {
+        sh '''#!/bin/bash
+        python3 -m venv test3
+        source test3/bin/activate
+        pip install pip --upgrade
+        pip install -r requirements.txt
+        export FLASK_APP=application
+        flask run &
+        '''
+     }
+   }
+    stage ('test') {
+      steps {
+        sh '''#!/bin/bash
+        source test3/bin/activate
+        py.test --verbose --junit-xml test-reports/results.xml
+        ''' 
+      }
+    
+      post{
+        always {
+          junit 'test-reports/results.xml'
+        }
+       
+      }
+    }
+     
+     stage('Test2'){
+      steps{
+          echo "Testing"
+      }
+     }
+     stage ('Deploy') {
+       agent{label 'awsDeploy'}
+       steps{
+       sh '''#!/bin/bash
+       git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
+       cd ./kuralabs_deployment_2
+       python3 -m venv test3
+       source test3/bin/activate
+       pip install -r requirements.txt
+       pip install gunicorn
+       gunicorn -w 4 application:app -b 0.0.0.0 --daemon
+       '''
+       }
+     }
+       
+  }
+ }
+ 
+ ```
